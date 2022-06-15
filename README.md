@@ -22,6 +22,12 @@ Task koji očitava stanje tastera pritisnutih na LED bar-u, na osnovu kojih se o
 ## void SerialSend_Task(void* pvParameters)
 U ovom tasku se vrši ispis poruka na serijsku. Karakter po karakter se ispisuje željena poruka. Kada se poruka ispiše do kraja (kada je brojač stigao do dužine riječi), onda se daje semafor da je ispis završen. Zadatak ovog taska je da primi poruku u niz, primi dužinu poruke i da ispiše poruku od nultog karaktera do karaktera čiji je indeks dužina poruke i da označi završetak radnje.
 
+## void SerialSend_Task0(void* pvParameters)
+S obzirom da vrijednost trenutne temperature treba dobiti svakih 200 ms sa kanala 0 serijske komunikacije, od strane FreeRTOS-a je to omogućeno tako što se u ovom tasku svakih 200 ms šalje karakter 'A' preko kanala 0. Kada se pokrene AdvUniCom.exe potrebno je označiti opciju Auto, odnosno svaki put kad stigne karakter 'A', da se pošalje naredba oblika 00xx\0d. (npr 0025\0d). Vrijednost koja se pošalje je zapravo vrijednost trenutne temperature (npr. 25). Povremeno je potrebno ručno u AdvUniCom softveru mijenjati ovu vrijednost kako bi se simulirala promjena temperature.
+
+## void SerialSend_Task1(void* pvParameters)
+S obzirom da vrijednost trenutne temperature treba dobiti svakih 200 ms sa kanala 1 serijske komunikacije, od strane FreeRTOS-a je to omogućeno tako što se u ovom tasku svakih 200 ms šalje karakter 'A' preko kanala 1. Kada se pokrene AdvUniCom.exe potrebno je označiti opciju Auto, odnosno svaki put kad stigne karakter 'A', da se pošalje naredba oblika 00xx\0d. (npr 0025\0d). Vrijednost koja se pošalje je zapravo vrijednost trenutne temperature (npr. 25). Povremeno je potrebno ručno u AdvUniCom softveru mijenjati ovu vrijednost kako bi se simulirala promjena temperature.
+
 ## void prijem_sa_senzora_tsk(void* pvParameters)
 U ovom tasku vrši se očitavanje podataka sa senzora. Na svakih 200 ms, task očitava nove vrijednosti temperature, formira trenutnu temperaturu kao srednju vrijednost pojedinačnih očitavanja senzora i određuje minimum i maksimum mjerenja.
 
