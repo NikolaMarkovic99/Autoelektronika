@@ -31,12 +31,6 @@ S obzirom da vrijednost trenutne temperature treba dobiti svakih 200 ms sa kanal
 ## void prijem_sa_senzora_tsk(void* pvParameters)
 U ovom tasku vrši se očitavanje podataka sa senzora. Na svakih 200 ms, task očitava nove vrijednosti temperature, formira trenutnu temperaturu kao srednju vrijednost pojedinačnih očitavanja senzora i određuje minimum i maksimum mjerenja.
 
-## void Primio_kanal_0(void* pvParameters)
-S obzirom da vrijednost trenutne temperature treba dobiti svakih 200 ms sa kanala 0 serijske komunikacije, od strane FreeRTOS-a je to omogućeno tako što se u ovom tasku svakih 200 ms šalju karakteri 'XYZ' preko kanala 0. Kada se pokrene AdvUniCom.exe potrebno je označiti opciju Auto, odnosno svaki put kad stignu karakteri 'XYZ', da se pošalje naredba oblika 00xx\0d (npr. 0025\0d ). Vrijednost koja se pošalje je zapravo vrijednost trenutne temperature (u navedenom primeru 25). Povremeno je potrebno ručno u AdvUniCom softveru mijenjati ovu vrijednost kako bi se simulirala promjena temperature u automobilu.
-
-## void Primio_kanal_1(void* pvParameters) 
-S obzirom da vrijednost trenutne temperature treba dobiti svakih 200 ms sa kanala 1 serijske komunikacije, od strane FreeRTOS-a je to omogućeno tako što se u ovom tasku svakih 200 ms šalju karakteri 'XYZ' preko kanala 1. Kada se pokrene AdvUniCom.exe potrebno je označiti opciju Auto, odnosno svaki put kad stignu karakteri 'XYZ', da se pošalje naredba oblika 00xx\0d (npr. 0025\0d). Vrijednost koja se pošalje je zapravo vrijednost trenutne temperature (u navedenom primeru 25). Povremeno je potrebno ručno u AdvUniCom softveru mijenjati ovu vrijednost kako bi se simulirala promjena temperature u automobilu.
-
 ## void SerialReceive_Task(void* pvParameters)
 Ovaj task ima za zadatak da obradi komandne poruke koje stižu sa kanala 2 serijske komunikacije. Komandu koja stiže kao i njenu dužinu smješta u redove, kako bi ostali taskovi te podatke imali na raspolaganju za dalje računanje. 
 
