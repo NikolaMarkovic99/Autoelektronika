@@ -2,7 +2,7 @@
 Upravljanje klimom u automobilu 
 
 # Projekat radili:
-  Dragana Tešović EE39/2018
+  Dragana Tešović EE39/2018, 
   Nikola Marković EE52/2018
 
 # Ideja i zadaci
