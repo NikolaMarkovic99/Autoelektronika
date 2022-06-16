@@ -1,7 +1,7 @@
 # Autoelektronika
 Upravljanje klimom u automobilu 
 
-# Projekat radili:
+Projekat radili:
   Dragana Tešović EE39/2018
   Nikola Marković EE52/2018
 
