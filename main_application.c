@@ -520,7 +520,7 @@ void obrada_podataka_task(void* pvParameters)
 		/* ispitujemo sta je stiglo, AUTO, MANU, zeljena_temp ili histerezis i ono sto treba ispisujemo na serijsku */
 
 		if ((duzina_primljene_rijeci == sizeof("AUTOMATSKI") - 1) && (strncmp(r_buffer, ("AUTOMATSKI"), duzina_primljene_rijeci) == 0)) {
-			printf("Dobro uneseno AUTOMATSKI \n");
+			printf("Dobro uneseno AUTOMATSKI  \n");
 
 			xSemaphoreTake(mutex_serijska, portMAX_DELAY);
 			strcpy(pomocni_niz, "OK AUTOMATSKI");
@@ -537,7 +537,7 @@ void obrada_podataka_task(void* pvParameters)
 		else if ((duzina_primljene_rijeci == sizeof("MANUELNO") - 1) && (strncmp(r_buffer, ("MANUELNO"), duzina_primljene_rijeci) == 0))
 		{
 			automatski = 0;
-			printf("Dobro uneseno MANUELNO\n");
+			printf("Dobro uneseno MANUELNO \n");
 
 			xSemaphoreTake(mutex_serijska, portMAX_DELAY);
 			strcpy(pomocni_niz, "OK MANUELNO");
