@@ -1,6 +1,10 @@
 # Autoelektronika
 Upravljanje klimom u automobilu 
 
+# Projekat radili:
+  Dragana Tešović EE39/2018
+  Nikola Marković EE52/2018
+
 # Ideja i zadaci
 1.	Podaci o temperaturi u automobilu se dobijaju automatski sa dva senzora, svakih 200 ms, sa kanala 0 i 1 serijske komunikacije. 
 2.	Trenutna temperatura se dobija kao srednja vrijednost očitanih temperatura, koje se šalju sa dva senzora.
